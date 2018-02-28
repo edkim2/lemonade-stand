@@ -9,6 +9,8 @@ namespace Lemonade_Stand
     class Demand
     {
         // member variables (HAS A)
+        public int demandBasedOnPrice;
+        public int demandBasedOnWeather;
 
         // constructor (SPAWNER)
         public Demand()
@@ -17,5 +19,7 @@ namespace Lemonade_Stand
         }
 
         // member methods (CAN DO)
+
+
     }
 }
