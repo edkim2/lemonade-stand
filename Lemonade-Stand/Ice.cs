@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Ice
+    class Ice : Supply
     {
         // member variables (HAS A)
 
         // constructor (SPAWNER)
         public Ice()
         {
-
+            price = .10;
+            name = "ice";
         }
 
         // member methods (CAN DO)

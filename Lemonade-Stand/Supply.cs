@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Supply
+    abstract class Supply
     {
         // member variables (HAS A)
+        public double price;
+        public string name;
 
         // constructor (SPAWNER)
         public Supply()
