@@ -13,7 +13,7 @@ namespace Lemonade_Stand
         public int cup;
         public int ice;
         public int sugar;
-        public int priceOfLemonade;
+        public double priceOfLemonade;
 
         // constructor (SPAWNER)
         public Recipe()
@@ -89,5 +89,71 @@ namespace Lemonade_Stand
             }
             return true;
         }
+
+        public int AmountOfLemonUsed(int lemon, int cup)
+        {
+            int totalLemon = lemon * cup;
+            return totalLemon;
+        }
+
+        public int AmountOfSugarUsed(int sugar, int cup)
+        {
+            int totalSugar = sugar * cup;
+            return totalSugar;
+        }
+
+        public int AmountOfIceUsed(int ice, int cup)
+        {
+            int totalIce = ice * cup;
+            return totalIce;
+        }
+
+        public void RemoveLemonsFromInventory(Player player, int lemon)
+        {
+            for (int i = 0; i < lemon; i++)
+            {
+                player.inventory.items[0].RemoveAt(0);
+            }
+        }
+
+        public void RemoveCupsFromInventory(Player player, int cup)
+        {
+            for (int i = 0; i < cup; i++)
+            {
+                player.inventory.items[1].RemoveAt(0);
+            }
+        }
+
+        public void RemoveIceFromInventory(Player player, int ice)
+        {
+            for (int i = 0; i < ice; i++)
+            {
+                player.inventory.items[2].RemoveAt(0);
+            }
+        }
+
+        public void RemoveSugarFromInventory(Player player, int sugar)
+        {
+            for (int i = 0; i < sugar; i++)
+            {
+                player.inventory.items[3].RemoveAt(0);
+            }
+        }
+
+        public void CreateLemonade(Player player, int cup)
+        {
+            for (int i = 0; i < cup; i++)
+            {
+                player.inventory.AddLemonadeIntoInventory(new Lemonade());
+            }
+        }
+
+        public double ChooseLemonadePrice()
+        {
+            Console.WriteLine("How much would you like to sell your lemonade for?");
+            priceOfLemonade = double.Parse(Console.ReadLine());
+            return priceOfLemonade;
+        }
+
     }
 }
