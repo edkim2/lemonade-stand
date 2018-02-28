@@ -22,6 +22,65 @@ namespace Lemonade_Stand
         }
 
         // member methods (CAN DO)
+        public void CreateRecipe(Player player)
+        {
+            Console.WriteLine("Now it's time to make your own recipe for your lemonade stand.");
+            Console.WriteLine("You can decide how much of what ingredient goes into your lemonade.");
+            Console.WriteLine("Press [1] to make your recipe, [2] to check your inventory, [3] to set your lemonade price, or [4] to exit this part of the game.");
+            string userInput = Console.ReadLine();
+
+            switch (userInput)
+            {
+                case "1":
+                    player.inventory.DisplayInventory();
+                    lemon = ChoosingLemon();
+                    CheckInventoryForLemon(player, lemon);
+                    cup = ChoosingCup();
+                    CheckInventoryForCup(player, cup);
+                    ice = ChoosingIce();
+                    CheckInventoryForIce(player, ice);
+                    sugar = ChoosingSugar();
+                    CheckInventoryForSugar(player, sugar);
+                    int totalLemon = AmountOfLemonUsed(lemon, cup);
+                    CheckInventoryForLemon(player, totalLemon);
+                    int totalIce = AmountOfIceUsed(ice, cup);
+                    CheckInventoryForIce(player, totalIce);
+                    int totalSugar = AmountOfSugarUsed(sugar, cup);
+                    CheckInventoryForSugar(player, totalSugar);
+                    RemoveLemonsFromInventory(player, totalLemon);
+                    RemoveCupsFromInventory(player, cup);
+                    RemoveIceFromInventory(player, totalIce);
+                    RemoveSugarFromInventory(player, totalSugar);
+                    CreateLemonade(player, cup);
+                    player.inventory.DisplayInventory();
+                    Console.Clear();
+                    CreateRecipe(player);
+                    break;
+
+                case "2":
+                    player.inventory.DisplayInventory();
+                    Console.Clear();
+                    CreateRecipe(player);
+                    break;
+
+                case "3":
+                    if (player.inventory.items[4].Count > 0)
+                    {
+                        ChooseLemonadePrice();
+                        Console.Clear();
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You need to make some lemonade!");
+                        Console.ReadKey();
+                        Console.Clear();
+                        CreateRecipe(player);
+                    }
+                    break;
+            }
+        }
+
         public int ChoosingLemon()
         {
             Console.WriteLine("How many lemons would you like to use for your recipe?");
