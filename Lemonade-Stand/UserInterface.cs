@@ -17,5 +17,14 @@ namespace Lemonade_Stand
         }
 
         // member methods (CAN DO)
+
+        public void DisplayRules()
+        {
+            Console.WriteLine("Welcome to Lemonade Stand.");
+            Console.WriteLine("You will have 7 days to make as much money as possible, and you’ve decided to open a lemonade stand!");
+            Console.WriteLine("You will have complete control over your business.");
+            Console.WriteLine("Including pricing, quality control, inventory control, and purchasing supplies.");
+            Console.WriteLine("Please hit [ENTER] to continue.");
+        }
     }
 }
