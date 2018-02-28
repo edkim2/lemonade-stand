@@ -22,14 +22,14 @@ namespace Lemonade_Stand
         }
 
         // member methods (CAN DO)
-        public int ChoosingLemons()
+        public int ChoosingLemon()
         {
             Console.WriteLine("How many lemons would you like to use for your recipe?");
             lemon = int.Parse(Console.ReadLine());
             return lemon;
         }
 
-        public int ChoosingCups()
+        public int ChoosingCup()
         {
             Console.WriteLine("How many cups of lemonade would you like to make?");
             cup = int.Parse(Console.ReadLine());
@@ -50,6 +50,44 @@ namespace Lemonade_Stand
             return sugar;
         }
 
+        public bool CheckInventoryForLemon(Player player, int lemon)
+        {
+            if(player.inventory.items[0].Count < lemon)
+            {
+                Console.WriteLine("You don't have enough lemons.");
+                ChoosingLemon();
+            }
+            return true;
+        }
 
+        public bool CheckInventoryForCup(Player player, int cup)
+        {
+            if (player.inventory.items[1].Count < cup)
+            {
+                Console.WriteLine("You don't have enough cups.");
+                ChoosingCup();
+            }
+            return true;
+        }
+
+        public bool CheckInventoryForIce(Player player, int ice)
+        {
+            if (player.inventory.items[2].Count < cup)
+            {
+                Console.WriteLine("You don't have enough ice.");
+                ChoosingIce();
+            }
+            return true;
+        }
+
+        public bool CheckInventoryForSugar(Player player, int sugar)
+        {
+            if (player.inventory.items[3].Count < sugar)
+            {
+                Console.WriteLine("You don't have enough sugar.");
+                ChoosingSugar();
+            }
+            return true;
+        }
     }
 }
