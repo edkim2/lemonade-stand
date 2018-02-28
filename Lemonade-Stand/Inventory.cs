@@ -34,7 +34,40 @@ namespace Lemonade_Stand
         }
 
         // member methods (CAN DO)
+        public void AddLemonIntoInventory(Lemon lemon)
+        {
+            items[0].Add(lemon);
+        }
 
+        public void AddCupIntoInventory(Cup cup)
+        {
+            items[1].Add(cup);
+        }
 
+        public void AddIceIntoInventory(Ice ice)
+        {
+            items[2].Add(ice);
+        }
+
+        public void AddSugarIntoInventory(Sugar sugar)
+        {
+            items[3].Add(sugar);
+        }
+
+        public void AddLemonadeIntoInventory(Lemonade lemonade)
+        {
+            items[4].Add(lemonade);
+        }
+
+        public void DisplayInventory()
+        {
+            Console.WriteLine("Here is your current inventory:");
+            Console.WriteLine("Money: " + money);
+            Console.WriteLine("Lemons: " + items[0].Count);
+            Console.WriteLine("Cups: " + items[1].Count);
+            Console.WriteLine("Ice: " + items[2].Count);
+            Console.WriteLine("Sugar: " + items[3].Count);
+            Console.WriteLine("Lemonade: " + items[4].Count);
+        }
     }
 }
