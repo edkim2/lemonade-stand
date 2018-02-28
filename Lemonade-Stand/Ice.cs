@@ -8,5 +8,14 @@ namespace Lemonade_Stand
 {
     class Ice
     {
+        // member variables (HAS A)
+
+        // constructor (SPAWNER)
+        public Ice()
+        {
+
+        }
+
+        // member methods (CAN DO)
     }
 }

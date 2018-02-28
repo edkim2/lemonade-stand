@@ -8,5 +8,14 @@ namespace Lemonade_Stand
 {
     class Day
     {
+        // member variables (HAS A)
+
+        // constructor (SPAWNER)
+        public Day()
+        {
+
+        }
+
+        // member methods (CAN DO)
     }
 }

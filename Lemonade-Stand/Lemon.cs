@@ -8,5 +8,14 @@ namespace Lemonade_Stand
 {
     class Lemon
     {
+        // member variables (HAS A)
+
+        // constructor (SPAWNER)
+        public Lemon()
+        {
+
+        }
+
+        // member methods (CAN DO)
     }
 }

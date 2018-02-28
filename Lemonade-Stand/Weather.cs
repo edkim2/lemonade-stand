@@ -8,5 +8,15 @@ namespace Lemonade_Stand
 {
     class Weather
     {
+        // member variables (HAS A)
+
+        // constructor (SPAWNER)
+        public Weather()
+        {
+
+        }
+
+        // member methods (CAN DO)
+
     }
 }
