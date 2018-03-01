@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Weather
+    public class Weather
     {
         // member variables (HAS A)
         public string weatherCondition;
         public string weatherTemperature;
+
         // constructor (SPAWNER)
         public Weather()
         {

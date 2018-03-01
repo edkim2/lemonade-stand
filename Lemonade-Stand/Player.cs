@@ -19,16 +19,16 @@ namespace Lemonade_Stand
         }
 
         // member methods (CAN DO)
-        public int SellLemonade(List<Customer> customer)
-        {
-            soldItems = 0;
-            for (int i = 0; i < customer.Count; i++)
-            {
-                if (inventory.items[4].Count == 0)
-                {
-                    Console.WriteLine("You sold out!");
-                }
-            }
-        }
+        //public int SellLemonade(List<Customer> customer)
+        //{
+        //    soldItems = 0;
+        //    for (int i = 0; i < customer.Count; i++)
+        //    {
+        //        if (inventory.items[4].Count == 0)
+        //        {
+        //            Console.WriteLine("You sold out!");
+        //        }
+        //    }
+        //}
     }
 }

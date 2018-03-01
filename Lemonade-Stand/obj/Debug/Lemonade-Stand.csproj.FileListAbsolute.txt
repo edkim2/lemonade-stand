@@ -1,1 +1,6 @@
 c:\users\edward kim\documents\visual studio 2015\Projects\Lemonade-Stand\Lemonade-Stand\bin\Debug\Lemonade-Stand.exe.config
+c:\users\edward kim\documents\visual studio 2015\Projects\Lemonade-Stand\Lemonade-Stand\obj\Debug\Lemonade-Stand.csprojResolveAssemblyReference.cache
+c:\users\edward kim\documents\visual studio 2015\Projects\Lemonade-Stand\Lemonade-Stand\bin\Debug\Lemonade-Stand.exe
+c:\users\edward kim\documents\visual studio 2015\Projects\Lemonade-Stand\Lemonade-Stand\bin\Debug\Lemonade-Stand.pdb
+c:\users\edward kim\documents\visual studio 2015\Projects\Lemonade-Stand\Lemonade-Stand\obj\Debug\Lemonade-Stand.exe
+c:\users\edward kim\documents\visual studio 2015\Projects\Lemonade-Stand\Lemonade-Stand\obj\Debug\Lemonade-Stand.pdb
