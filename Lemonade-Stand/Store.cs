@@ -10,16 +10,61 @@ namespace Lemonade_Stand
     {
         // member variables (HAS A)
         public double fullCost;
+        Recipe recipe;
         // constructor (SPAWNER)
         public Store()
         {
-
+            recipe = new Recipe();
         }
 
         // member methods (CAN DO)
+        public void PurchasingItemsFromStore(Player player)
+        {
+            Console.WriteLine("You are now at the Store. You can purchase the ingredients to make your lemonade.");
+            Console.WriteLine("Press [1] to purchase items, [2] to check your inventory, [3] to exit the store.");
+            string userInput = Console.ReadLine();
+
+            switch (userInput)
+            {
+                case "1":
+                    player.inventory.DisplayInventory();
+                    int lemon = BuyLemonFromStore(player);
+                    MovePurchasedLemonToInventory(player, lemon);
+                    int ice = BuyIceFromStore(player);
+                    MovePurchasedIceToInventory(player, ice);
+                    int cup = BuyCupFromStore(player);
+                    MovePurchasedCupToInventory(player, cup);
+                    int sugar = BuySugarFromStore(player);
+                    MovePurchasedSugarToInventory(player, sugar);
+                    GetFullCostOfItems(lemon * new Lemon().price, ice * new Ice().price, cup * new Cup().price, sugar * new Sugar().price);
+                    Console.Clear();
+                    PurchasingItemsFromStore(player);
+                    break;
+
+                case "2":
+                    player.inventory.DisplayInventory();
+                    Console.Clear();
+                    PurchasingItemsFromStore(player);
+                    break;
+
+                case "3":
+                    recipe.CreateRecipe(player);
+                    break;
+
+
+            }
+        }
+
+        public double GetFullCostOfItems(double costOfLemon, double costOfIce, double costOfCup, double costOfSugar)
+        {
+            double fullCost;
+            fullCost = costOfLemon + costOfIce + costOfCup + costOfSugar;
+            return fullCost;
+        }
+
         public int BuyLemonFromStore(Player player)
         {
-            Console.WriteLine("How many lemons would you like to purchase?");
+            Console.WriteLine("Each lemon costs $0.10. How many lemons would you like to purchase?");
             int lemon = int.Parse(Console.ReadLine());
             if (!UseMoneyForLemon(player, GetCostOfLemon(lemon)))
             {
@@ -59,7 +104,7 @@ namespace Lemonade_Stand
 
         public int BuyIceFromStore(Player player)
         {
-            Console.WriteLine("How much ice would you like to purchase?");
+            Console.WriteLine("Each ice costs $0.10. How much ice would you like to purchase?");
             int ice = int.Parse(Console.ReadLine());
             if (!UseMoneyForIce(player, GetCostOfIce(ice)))
             {
@@ -99,7 +144,7 @@ namespace Lemonade_Stand
 
         public int BuySugarFromStore(Player player)
         {
-            Console.WriteLine("How much sugar would you like to purchase?");
+            Console.WriteLine("Each sugar costs $0.10. How much sugar would you like to purchase?");
             int sugar = int.Parse(Console.ReadLine());
             if (!UseMoneyForSugar(player, GetCostOfSugar(sugar)))
             {
@@ -139,7 +184,7 @@ namespace Lemonade_Stand
 
         public int BuyCupFromStore(Player player)
         {
-            Console.WriteLine("How many cups would you like to purchase?");
+            Console.WriteLine("Each cup costs $0.10. How many cups would you like to purchase?");
             int cup = int.Parse(Console.ReadLine());
             if (!UseMoneyForCup(player, GetCostOfCup(cup)))
             {
